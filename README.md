@@ -5,7 +5,7 @@
     - [Example image](#example-image)
   - [References](#references)
   - [Functionalities](#functionalities)
-  - [Tools](#tools)
+  - [Tools & Framework](#tools--framework)
 
 ## General Idea
 
@@ -54,22 +54,24 @@ Trello card details
     - Attach file
   - Delete a card
   - Allow user to move the card from one list to another
-  - TODO later
-    - Add priority to the card
-    - Add animation to the card
+
 - ### Notification
   - When someone add to board ?
   - When someone memtion in the card
   - Any update to the watching card
-- ### Chat (maybe)
+- ### Next feature
+  - Add priority to the card
+  - Add animation to the card
+  - Chat
 
 
-## Tools
-- [Visual studio scode](https://code.visualstudio.com/)
+## Tools & Framework
+- [Visual studio code](https://code.visualstudio.com/)
 - Postgres version ?
-- ....
-  
+- React (web)
+- Flutter (mobile)
+- ... (desktop)
+- ... (backend)
   - ### Visual studio code extension
-    - ...
-  - ### Markdown extension
     - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+    - ...
