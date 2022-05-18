@@ -94,9 +94,9 @@ Trello card details
 
 ### Web component
 
-- Input component @visuallong
-- Form component @NguyenNguyen1995
-- Card component @visuallong
-- List component @NguyenNguyen1995
-- Board component @visuallong
-- Modal component @NguyenNguyen1995
+- Input component [@Long](https://github.com/visuallong)
+- Form component [@Nguyen](https://github.com/NguyenNguyen1995)
+- Card component [@Long](https://github.com/visuallong)
+- List component [@Nguyen](https://github.com/NguyenNguyen1995)
+- Board component [@Long](https://github.com/visuallong)
+- Modal component [@Nguyen](https://github.com/NguyenNguyen1995)
