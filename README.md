@@ -6,10 +6,14 @@
   - [References](#references)
   - [Functionalities](#functionalities)
   - [Tools & Framework](#tools--framework)
+  - [Web UI requirements](#web-ui-requirements)
+    - [Web component](#web-component)
 
 ## General Idea
 
 Create an application allow login user manages the board by creating, updating and deleting board. Each board has zero or many list inside the board. Each list contains zero or many cards. Each card has name, allow options to be added like due date, check list, add member and priority. Card also allow user to chat and attach file (images, file support)
+
+See what is [Kanban](https://www.ntaskmanager.com/blog/what-is-kanban/)
 
 ### Example image
 
@@ -75,3 +79,24 @@ Trello card details
   - ### Visual studio code extension
     - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
     - ...
+
+## Web UI requirements
+
+1. Login page
+2. Register page
+3. Home page (see all the current board)
+4. Create board modal
+5. View board list page
+6. Add a new list modal
+7. Create card modal (for list)
+8. Can drag one card from the list to another
+9. Click the card to see the details
+
+### Web component
+
+- Input component @visuallong
+- Form component @NguyenNguyen1995
+- Card component @visuallong
+- List component @NguyenNguyen1995
+- Board component @visuallong
+- Modal component @NguyenNguyen1995
