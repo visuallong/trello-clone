@@ -1,5 +1,5 @@
 name: TODO
-on: []
+on: [pull]
 jobs:
   build-web:
     runs-on: ubuntu-lastest
