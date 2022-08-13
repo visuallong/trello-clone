@@ -1,5 +1,8 @@
 name: TODO
-on: [pull]
+on:
+  push:
+    branches:
+      - prod
 jobs:
   build-web:
     runs-on: ubuntu-lastest
