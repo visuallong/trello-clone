@@ -2,5 +2,7 @@ name: TODO
 on: [push]
 jobs:
   build-web:
-    - name: test github actions
-      run: echo Hello World
+    runs-on: ubuntu-lastest
+    steps:
+      - name: test github actions
+        run: echo Hello World
