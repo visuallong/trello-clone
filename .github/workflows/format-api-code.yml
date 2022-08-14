@@ -21,15 +21,14 @@ jobs:
           pip install black
       - name: Format source code
         run: |
-          black ./api
+          black .
+        working-directory: api
       - name: Check for modified files
         id: git-check
         run: echo ::set-output name=modified::$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)
       - name: Push changes
         if: steps.git-check.outputs.modified == 'true'
-        run: |
-          git config user.name 'Black Formatter'
-          git config user.email 'black-formatter@users.noreply.github.com'
-          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git commit -am "Format source code"
-          git push
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: format source code
+          branch: ${{ github.head_ref }}
