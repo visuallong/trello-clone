@@ -20,7 +20,7 @@ async def signup(register_model: RegisterModel):
 
 @app.post("/api/auth/login")
 async def login(login_model: LoginModel):
-    user=get_user(login_model.username)
+    user = get_user(login_model.username)
 
     if not user or (
         user and not verfiy_password(login_model.password, user["password"])
@@ -36,12 +36,15 @@ async def login(login_model: LoginModel):
 
 @app.get("/api/boards")
 async def get_user_board(current_user=Depends(get_current_user)):
-    return{"user board": "TODO"}
+    return {"user board": "TODO"}
 
 
 if __name__ == "__main__":
     if app_settings.env == "dev":
-        uvicorn.run(       "main:app",      host=app_settings.app_host,           port=app_settings.app_port,
+        uvicorn.run(
+            "main:app",
+            host=app_settings.app_host,
+            port=app_settings.app_port,
             reload=True,
             debug=True,
             workers=3,
