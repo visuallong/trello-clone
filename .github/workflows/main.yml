@@ -1,7 +1,8 @@
 name: TODO
 on:
-  braches:
-    - main
+  push:
+    braches:
+      - main
 jobs:
   deploy-web:
     runs-on: ubuntu-lastest
