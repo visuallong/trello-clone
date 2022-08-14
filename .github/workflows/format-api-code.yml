@@ -21,4 +21,4 @@ jobs:
           pip install black
       - name: Format source code
         run: |
-          black /api
+          black ./api
