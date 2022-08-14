@@ -7,6 +7,7 @@
   - [Functionalities](#functionalities)
   - [Requirements](#requirements)
   - [Development tools](#development-tools)
+  - [Setup backend development](#setup-backend-development)
   - [Web UI requirements](#web-ui-requirements)
     - [Web component](#web-component)
 
@@ -84,10 +85,56 @@ Trello card details
 - [Docker](https://www.docker.com/get-started/)
 - [Fastapi](https://fastapi.tiangolo.com/)
 
+## Setup backend development
+
+1. Create virtual environment for python
+```
+python -m venv path_to_env/fastapi
+```
+2. Activate virtual environment in current shell
+```
+cd path_to_env/fastapi/Scripts/Activate
+```
+3. Create `db.env` file
+```
+cd root_project_folder/database
+touch db.env
+or
+ni db.env (powershell)
+```
+4. Use `db.env` template as following
+```
+POSTGRES_USER=
+POSTGRES_PASSWORD=
+POSTGRES_DB=
+```
+5. Bring up database in Docker
+```
+docker-compose up -d
+```
+6. Install requirement packages
+```
+cd root_project_folder/api
+pip install -r requirement.dev.txt
+```
+7. Create `.env` file as following
+```
+ENV=dev
+APP_DEV_PORT=
+SECRET_KEY=
+JWT_ALGORITHM=
+ACCESS_TOKEN_EXPIRE_MINUTES=
+DB_URL= # see SQLAlchemy docs
+```
+8. Run
+```
+python main.py
+```
+
 ## Web UI requirements
 
-1. Login page
-2. Register page
+1. Login page (currently doing)
+2. Register page (currently doing)
 3. Home page (see all the current board)
 4. Create board modal
 5. View board list page
