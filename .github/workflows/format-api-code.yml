@@ -31,5 +31,5 @@ jobs:
           git config user.name 'Black Formatter'
           git config user.email 'black-formatter@users.noreply.github.com'
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git commit -m "Format source code"
+          git commit -am "Format source code"
           git push
