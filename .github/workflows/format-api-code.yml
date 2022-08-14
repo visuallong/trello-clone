@@ -28,7 +28,7 @@ jobs:
       - name: Push changes
         if: steps.git-check.outputs.modified == 'true'
         run: |
-          remote_repo="https://${{ GITHUB_ACTOR }}:${{ GITHUB_TOKEN }}@github.com/${{ GITHUB_REPOSITORY }}.git"
+          remote_repo="https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
           echo $remote_repo
           git config http.sslVerify false
           git config user.name 'Black Formatter'
