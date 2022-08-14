@@ -5,7 +5,8 @@
     - [Example image](#example-image)
   - [References](#references)
   - [Functionalities](#functionalities)
-  - [Tools & Framework](#tools--framework)
+  - [Requirements](#requirements)
+  - [Development tools](#development-tools)
   - [Web UI requirements](#web-ui-requirements)
     - [Web component](#web-component)
 
@@ -25,24 +26,24 @@ Trello Home page example 2
 
 ![](https://embedwistia-a.akamaihd.net/deliveries/adfdcfdf4892a13efabb20056dddbed1.webp?image_crop_resized=1280x720 "Trello home page 2")
 
-
 Trello card details
 
 ![](https://blog-cdn.everhour.com/blog/wp-content/uploads/2019/11/This_is_a_card__Drag_it_to_the__Tried_It__List_to_show_it_s_done__%E2%86%92_on__Tutorial_Board___Trello.png "Trello card detail")
 
 ## References
 
-- https://getnave.com/blog/trello-kanban-boards/ 
+- https://getnave.com/blog/trello-kanban-boards/
 
 ## Functionalities
+
 - ### User
   - Create an account
   - Login
 - ### Board
-  -  Create a board
-  -  Update board information
-  -  Delete board
-  -  View all the created board and user tagged board
+  - Create a board
+  - Update board information
+  - Delete board
+  - View all the created board and user tagged board
 - ### List
   - Create a list inside a board
   - Update list information
@@ -53,12 +54,11 @@ Trello card details
   - Update a card info
   - Add options to the card
     - Add due date
-    - Checklist 
+    - Checklist
     - Tag member
     - Attach file
   - Delete a card
   - Allow user to move the card from one list to another
-
 - ### Notification
   - When someone add to board ?
   - When someone memtion in the card
@@ -68,17 +68,21 @@ Trello card details
   - Add animation to the card
   - Chat
 
+## Requirements
 
-## Tools & Framework
+- [Python 3.10](https://www.python.org/downloads/)
+- [Postgres 11 or greater](https://www.postgresql.org/download/)
+- [React](https://reactjs.org/tutorial/tutorial.html#setup-option-2-local-development-environment)
+
+## Development tools
+
 - [Visual studio code](https://code.visualstudio.com/)
-- Postgres version ?
-- React (web)
-- Flutter (mobile)
-- ... (desktop)
-- ... (backend)
-  - ### Visual studio code extension
+  - Visual studio code extension
     - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
-    - ...
+    - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+    - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
+- [Docker](https://www.docker.com/get-started/)
+- [Fastapi](https://fastapi.tiangolo.com/)
 
 ## Web UI requirements
 
@@ -95,8 +99,8 @@ Trello card details
 ### Web component
 
 - Input component [@Long](https://github.com/visuallong)
-- Form component [@Nguyen](https://github.com/NguyenNguyen1995)
+- Form component [@Nguyen](https://github.com/BabyfaceDeveloper)
 - Card component [@Long](https://github.com/visuallong)
-- List component [@Nguyen](https://github.com/NguyenNguyen1995)
+- List component [@Nguyen](https://github.com/BabyfaceDeveloper)
 - Board component [@Long](https://github.com/visuallong)
-- Modal component [@Nguyen](https://github.com/NguyenNguyen1995)
+- Modal component [@Nguyen](https://github.com/BabyfaceDeveloper)
