@@ -1,7 +1,9 @@
 name: TODO
-on: []
+on:
+  braches:
+    - main
 jobs:
-  build-web:
+  deploy-web:
     runs-on: ubuntu-lastest
     steps:
       - name: test github actions
