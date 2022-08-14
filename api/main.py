@@ -21,23 +21,38 @@ async def index():
 
 
 @app.post("/api/auth/signup")
-async def signup(user_create: UserCreate, user_repo: UserRepo = Depends(UserRepo), token_util:TokenUtil=Depends(TokenUtil)):
+async def signup(
+    user_create: UserCreate,
+    user_repo: UserRepo = Depends(UserRepo),
+    token_util: TokenUtil = Depends(TokenUtil),
+):
     if await user_repo.get_user(user_create.username.strip()):
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="user exists")
-    
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, detail="user exists"
+        )
+
     user = await user_repo.create_user(user_create)
     if not user:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Something went wrong. Please try again")
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Something went wrong. Please try again",
+        )
 
-    return {"access_token":token_util.create_access_token(user)}
+    return {"access_token": token_util.create_access_token(user)}
 
 
 @app.post("/api/auth/login")
-async def login(user_login: UserLogin, user_repo: UserRepo = Depends(UserRepo), token_util:TokenUtil=Depends(TokenUtil), crypto_util: CryptoUtil=Depends(CryptoUtil)):
+async def login(
+    user_login: UserLogin,
+    user_repo: UserRepo = Depends(UserRepo),
+    token_util: TokenUtil = Depends(TokenUtil),
+    crypto_util: CryptoUtil = Depends(CryptoUtil),
+):
     user = await user_repo.get_user(user_login.username)
 
     if not user or (
-        user and not crypto_util.verfiy_password(user_login.password, user.hashed_password)
+        user
+        and not crypto_util.verfiy_password(user_login.password, user.hashed_password)
     ):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
