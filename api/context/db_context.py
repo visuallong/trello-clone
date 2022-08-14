@@ -8,9 +8,10 @@ __app_settings = get_app_setting()
 
 engine = create_engine(__app_settings.db_url)
 
-__SessionLocal=sessionmaker(autocommit=False,autoflush=False,bind=engine)
+__SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
+
 
 def get_db():
     try:
