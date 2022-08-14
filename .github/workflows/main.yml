@@ -1,8 +1,5 @@
-name: Format fastapi source code
-on:
-  push:
-    branches:
-      - authen-api
+name: Format source code
+on: [push]
 
 jobs:
   format-code:
