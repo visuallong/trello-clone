@@ -13,12 +13,15 @@ def get_app_setting():
 
 
 class __AppSetting(BaseSettings):
-    env: str
+    host: str | None = "127.0.0.1"
+    port: int | None = 7000
     secret_key: str
     jwt_algorithm: str
-    app_dev_port: int
     access_token_expire_minutes: int
     db_url: str
+    reload: bool | None = False
+    debug: bool | None = False
+    show_sql: bool | None = False
 
     class Config:
         env_file: str = ".env"

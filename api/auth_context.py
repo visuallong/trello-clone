@@ -1,23 +1,21 @@
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 
-from repositories.user_repo import UserRepo
-from utils.token_utils import TokenUtil
-
-__scheme = HTTPBearer()
+from repos.user_repo import UserRepo
+from services import decode_token
 
 
 async def get_current_user(
-    credentials: HTTPAuthorizationCredentials = Depends(__scheme),
+    credentials: HTTPAuthorizationCredentials = Depends(HTTPBearer()),
     user_repo: UserRepo = Depends(UserRepo),
-    token_util: TokenUtil = Depends(TokenUtil),
+    decode_token=Depends(decode_token),
 ):
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
         headers={"WWW-Authenticate": "Bearer"},
     )
-    username = token_util.decode_token(credentials.credentials)
+    username = decode_token(credentials.credentials)
     if not username:
         raise credentials_exception
     user = await user_repo.get_user(username=username)
