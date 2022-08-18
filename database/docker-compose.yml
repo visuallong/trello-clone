@@ -2,14 +2,14 @@ version: '3.4'
 
 services:
   database:
-    container_name: postgres_database_container
+    container_name: trello-database
     image: postgres:14-bullseye
     volumes:
-      - database-data:/var/lib/postgresql/data
+      - trello-database-data:/var/lib/postgresql/data
     env_file:
       - db.env
     ports:
       - 5432:5432
 
 volumes:
-  database-data:
+  trello-database-data:
