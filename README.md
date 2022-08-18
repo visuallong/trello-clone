@@ -89,11 +89,11 @@ Trello card details
 
 1. Create virtual environment for python
 ```
-python -m venv path_to_env/fastapi
+python -m venv path_to_env
 ```
 2. Activate virtual environment in current shell
 ```
-cd path_to_env/fastapi/Scripts/Activate
+cd path_to_env/Scripts/Activate
 ```
 3. Create `db.env` file
 ```
@@ -115,16 +115,16 @@ docker-compose up -d
 6. Install requirement packages
 ```
 cd root_project_folder/api
-pip install -r requirement.dev.txt
+pip install -r requirement.txt
 ```
 7. Create `.env` file as following
 ```
-ENV=dev
-APP_DEV_PORT=
-SECRET_KEY=
-JWT_ALGORITHM=
-ACCESS_TOKEN_EXPIRE_MINUTES=
-DB_URL= # see SQLAlchemy docs
+secret_key= # secret key for jwt implement
+jwt_algorithm= # HS256 or HS512 or ..
+access_token_expire_minutes= # jwt last long
+reload= # take any number or string except blank or removed for disable
+debug= # take any number or string except blank or removed for disable
+db_url=postgresql+asyncpg://[POSTGRES_USER]:[POSTGRES_PASSWORD]@[POSTGRES_HOST]:[POSTGRES_PORT]/[POSTGRES_DB]
 ```
 8. Run
 ```
@@ -135,7 +135,7 @@ python main.py
 
 1. Login page (currently doing)
 2. Register page (currently doing)
-3. Home page (see all the current board)
+3. Home page (see all the current board) (next week)
 4. Create board modal
 5. View board list page
 6. Add a new list modal
