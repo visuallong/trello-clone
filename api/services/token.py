@@ -1,21 +1,10 @@
 from datetime import datetime, timedelta
 
-from jose import JWTError, jwt
-from passlib.context import CryptContext
-
 from config import get_app_setting
-from models.user import User
+from jose import JWTError, jwt
+from models import User
 
-__pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 __app_settings = get_app_setting()
-
-
-def verfiy_password(plain_password: str, hashed_password: str):
-    return __pwd_context.verify(plain_password, hashed_password)
-
-
-def get_password_hash(plain_password: str):
-    return __pwd_context.hash(plain_password)
 
 
 def create_access_token(user: User):

@@ -1,6 +1,6 @@
-from db import get_db_session
+from context.db import get_db_session
 from fastapi import Depends
-from models.user import User
+from models import User
 from sqlalchemy.future import select
 from sqlalchemy.orm import Session
 
@@ -20,5 +20,5 @@ class UserRepo:
 
     async def create_user(self, user: User) -> User:
         self.__db_context.add(user)
-        await self.__db_context.flush()
+        await self.__db_context.commit()
         return user

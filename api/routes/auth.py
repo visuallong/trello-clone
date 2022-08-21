@@ -1,12 +1,13 @@
 from fastapi import APIRouter, Depends, HTTPException, status
-from models.user import User
-from repos.user_repo import UserRepo
-from schemas.user_dtos import UserCreate, UserLogin
-from services import create_access_token, get_password_hash, verfiy_password
+from models import User
+from repos.users import UserRepo
+from schemas.users import UserCreate, UserLogin
+from services.crypto import get_password_hash, verfiy_password
+from services.token import create_access_token
 
 router = APIRouter(
     prefix="/api/auth",
-    tags=["authentication api"],
+    tags=["authentication"],
 )
 
 

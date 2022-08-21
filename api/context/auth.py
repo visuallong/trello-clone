@@ -1,14 +1,12 @@
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
-
-from repos.user_repo import UserRepo
-from services import decode_token
+from repos.users import UserRepo
+from services.token import decode_token
 
 
 async def get_current_user(
     credentials: HTTPAuthorizationCredentials = Depends(HTTPBearer()),
     user_repo: UserRepo = Depends(UserRepo),
-    decode_token=Depends(decode_token),
 ):
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
