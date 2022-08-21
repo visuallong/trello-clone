@@ -5,7 +5,8 @@ from models import Board
 from sqlalchemy.future import select
 from sqlalchemy.orm import Session
 
-class BoardRepo():
+
+class BoardRepo:
     def __init__(
         self,
         db_context: Session = Depends(get_db_session),
@@ -19,9 +20,7 @@ class BoardRepo():
         return result.scalars().first()
 
     async def get_boards(self) -> List[Board]:
-        result = await self.__db_context.execute(
-            select(Board)
-        )
+        result = await self.__db_context.execute(select(Board))
         return result.scalars().all()
 
     async def create_board(self, board: Board) -> Board:

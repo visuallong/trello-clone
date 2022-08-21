@@ -24,9 +24,11 @@ class Role(Base):
     name = Column(String(255), unique=True, nullable=False)
     create_date = Column(DateTime(timezone=True), server_default=func.now())
 
+
 # TODO
 # class UserRole(Base):
 #     __tablename__ = "users_roles"
+
 
 class Board(Base):
     __tablename__ = "boards"

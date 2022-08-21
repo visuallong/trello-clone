@@ -25,8 +25,10 @@ async def create_board(
 ):
     board = await board_repo.get_board(create_board.name.strip())
     if board:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="board exists")
-    
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, detail="board exists"
+        )
+
     board = Board(name=create_board.name)
     board = await board_repo.create_board(board)
     return board
